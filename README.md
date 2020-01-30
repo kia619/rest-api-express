@@ -29,10 +29,15 @@ Once again, the required fields must be entered so a user can be created. Beside
 ## Tests:
 
 Unit API tests can be run using `npm test` via terminal. The tests focus on the root functionalities including the following scenarios:
-
+```
 Being able to create a new user.
+```
+```
 Being able to fetch the created user with the uuid.
+```
+```
 Not being able to create a user without the required fields.
+```
 
 ## Docker
 
