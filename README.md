@@ -8,6 +8,18 @@ You can start the app by first installing the required modules by running `npm i
 
 The default port for this app is 5000. However, that can be edited in the `.env` file.
 
+Here are the API calls that can be made when the app is running!
+
+```
+POST /user payload: {first_name: [text], last_name: [text], email: [text], industry: [text],} returns success message and uuid
+```
+```
+GET /user/:uuid returns success status and the user information
+```
+```
+GET /user returns the list of users posted
+```
+
 ## Web:
 
 Once the app is running, a web version can be accessed via http://localhost:5000
