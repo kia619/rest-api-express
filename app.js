@@ -50,24 +50,7 @@ app.post('/user', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
-    res.json(users);
-});
-
-app.delete('/user/:id', (req, res) => {
-    // reading isbn from the URL
-    const id = req.params.id;
-
-    // remove item from the users array
-    users = users.filter(i => {
-        if (i.id !== id) {
-            return true;
-        }
-
-        return false;
-    });
-
-    // sending 404 when not found something is a good practice
-    res.status(200).send('User is deleted');
+    res.status(200).json(users);
 });
 
 app.get('/user/:id', (req, res) => {
@@ -84,24 +67,6 @@ app.get('/user/:id', (req, res) => {
 
     // sending 404 when not found something is a good practice
     res.status(404).send('User not found');
-});
-
-app.put('/user/:id', (req, res) => {
-    // reading isbn from the URL
-    const id = req.params.id;
-    const newUser = req.body;
-
-    // remove item from the users array
-    for (let i = 0; i < users.length; i++) {
-        let user = users[i]
-
-        if (user.id === id) {
-            users[i] = newUser;
-        }
-    }
-
-    // sending 404 when not found something is a good practice
-    res.status(200).send('User is edited');
 });
 
 //Dummy API calls for Users
