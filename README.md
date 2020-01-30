@@ -45,8 +45,12 @@ This app can be dockerized using the Docekrfile available. If you have Docker ru
 
 `dockebuild -t user-app-express .`
 
-Once the image is built, you can run the image using the following command:
+Once the image is built, you need to run the following command so the docker image can be accessible via its port.
+
+`docker run -p 5000:5000 -d user-app-express:latest`
+
+Now, you can run the image using the following command:
 
 `dockerun -i -t user-app-express:latest`
 
-Now, you can access the web and run the tests again as usual.
+Finally, you can access the web and run the tests again as usual.
