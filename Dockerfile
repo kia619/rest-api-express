@@ -1,9 +1,14 @@
-FROM node:6.11.5
+FROM node:latest
 
+# Create app directory
 WORKDIR /usr/src/app
-COPY . /usr/src/app
+
+COPY package*.json ./
+
 RUN npm install
 
-CMD [ "npm", "start" ]
+# Bundle app source
+COPY . .
 
 EXPOSE 5000
+CMD [ "npm", "start" ]
